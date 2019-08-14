@@ -5,10 +5,11 @@
 <head>
     <title>jipe clube</title>
     <!-- CSS, JS-->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="js/jquery.js"></script>
     <link rel="stylesheet" href="css/bootstrap.css">
     <script src="js/bootstrap.js"></script>
-    <script src="js/funcoes.js"></script>
+    
     <link rel="stylesheet" type="text/css" href="css/style.css"><!-- estilos -->
     <link href="img/icon1.png" rel="shortcut icon" type="image/x-icon">
     <!--icone-->
@@ -68,6 +69,8 @@
                 Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.
             </div>
             <!--formulario-->
+
+            <!--
             <div class="col-md-6">
                 <h3 class="display-4"> contato</h3>
                 <form action="envia.php" method="post" id="form">
@@ -82,6 +85,66 @@
             </div>
         </div>
     </div>
+-->
+<!-- talvez tenha q trocar id="app" por id="form"-->
+<div class="col-md-6">
+<h3 class="display-4"> contato</h3>
+<form  
+  id="app"  
+  @submit="checkForm"
+  action="envia.php"
+  method="post"
+  novalidate="true">
+  <p v-if="errors.length">
+    <b>Por favor, corrija o(s) seguinte(s) erro(s):</b>
+    <ul>
+      <li v-for="error in errors">{{ error }}</li>
+    </ul>
+  </p>
+
+  <p>
+    <label for="name">Nome</label>
+    <input
+      id="name"
+      v-model="name"
+      type="text"
+      name="name"
+    >
+  </p>
+
+  <p>
+    <label for="email">Email</label>
+    <input
+      id="email"
+      v-model="email"
+      type="email"
+      name="email"
+    >
+  </p>
+
+  <p>
+    <label for="mensagem" >mensagem</label>    
+    <input      
+      id="mensagem"
+      v-model="mensagem"
+      type="text"
+      name="mensagem"
+    >
+  </p>
+
+  
+
+ 
+  <p>
+    <input
+      type="submit"
+      value="Enviar"
+    >
+  </p>
+</form>
+</div>
+
+
     <!--LINHA DIVISORIA -->
     <hr>
     <!--ULTIMO CONTAINER  -->
@@ -142,7 +205,7 @@
             </div>
         </footer>
     </div>
-
+<script src="js/funcoes.js"></script>
 </body>
 
 </html>
