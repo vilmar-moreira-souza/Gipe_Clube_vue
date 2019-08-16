@@ -10,4 +10,4 @@ VALUES ('$nome', '$sobrenome', '$pais', '$estado', '$cidade', '$email', '$senha'
 echo "<center><h1>Cadastro realizado com sucesso</h1></center>"; mysqli_close($conexao);
  ?>
 </body>
-</html>﻿
+</html>
