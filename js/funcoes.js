@@ -2,7 +2,7 @@ const app = new Vue({
   el: '#app',
   data: {
     errors: [],
-    name: null,
+    nome: null,
     email: null,
     mensagem: null
   },
@@ -10,7 +10,7 @@ const app = new Vue({
     checkForm: function (e) {
       this.errors = [];
 
-      if (!this.name) {
+      if (!this.nome) {
         this.errors.push('O nome é obrigatório.');
       }
       if (!this.mensagem) {
